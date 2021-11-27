@@ -1,7 +1,7 @@
-const n1 = 1
-const n2 = 2
-const n3 = 4
+const n1 = 3
+const n2 = 6
+const n3 = 9
 
 //let inpar = n1%2
 
-console.log(n1%2 == 1 || n2%2 == 1 || n3%2 == 1)
+console.log(n1%2 == 0 || n2%2 == 0 || n3%2 == 0)
