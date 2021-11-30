@@ -1,0 +1,39 @@
+div:hover {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #adadad;
+
+}
+
+div:nth-of-type(1) {
+    background-color: orchid;
+    font-family:'Courier New', Courier, monospace;
+}
+
+div:nth-of-type(2) {
+    background-color:palegoldenrod;
+    font-size: 20px;
+}
+
+div:nth-of-type(3) {
+    background-color:peru;
+    height: 40px;
+    font-family:sans-serif;
+    
+}
+
+div:nth-of-type(4) {
+    background-color:royalblue;
+    font-size: 10px;
+}
+
+div:nth-of-type(5) {
+    background-color:seagreen;
+    color: white;
+}
+
+}
+ 
+div:nth-child(odd) h3 {
+    font-style: italic;
+}
