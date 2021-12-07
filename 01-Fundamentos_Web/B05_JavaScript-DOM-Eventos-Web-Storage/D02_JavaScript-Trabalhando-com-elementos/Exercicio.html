@@ -93,6 +93,7 @@
         for (let ex of extenso){
             let criali = document.createElement("li");
             criali.innerText = ex;
+            criali.className = "list";
             document.querySelector("ul").appendChild(criali);
         }
     // 9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
@@ -115,7 +116,19 @@
     // 4 - Centralize a section criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto da section ;
         criaSection3.style.marginRight="auto";
     // 5 - Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
-        criaSection.style.background="green";        
+        criaSection.style.background="green";
+    // 6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+        let listaNumeros = document.querySelectorAll(".list");
+            listaNumeros[9].parentNode.removeChild(listaNumeros[9])
+            listaNumeros[8].parentNode.removeChild(listaNumeros[8])
+        /*
+        for (let id=0; id<listaNumeros.length; id+=1){
+                let element = listaNumeros[id];
+                if (element.innerText.includes("nove")){
+                    listaNumeros.parentNode.removeChild(element);
+                }
+            }
+        */
     </script>
   </body>
 </html>
