@@ -81,6 +81,27 @@
         const criaSection3 = document.createElement("section");
         criaSection3.className="right-content";
         document.querySelector("main").appendChild(criaSection3);
+    // 7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+        const img = document.createElement("img");
+        img.src = "https://picsum.photos/200";
+        img.className = "small-image"
+        document.querySelector(".left-content").appendChild(img);
+    // 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+        let extenso = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"];
+        const criaul = document.createElement("ul");
+        document.querySelector(".right-content").appendChild(criaul);
+        for (let ex of extenso){
+            let criali = document.createElement("li");
+            criali.innerText = ex;
+            document.querySelector("ul").appendChild(criali);
+        }
+    // 9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+        let count = [1,2,3];
+        for (let cont of count){
+            const criah3 = document.createElement("h3");
+            document.querySelector(".main-content").appendChild(criah3);
+        }
+        
     </script>
   </body>
 </html>
