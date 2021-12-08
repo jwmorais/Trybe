@@ -14,7 +14,7 @@ function createDaysOfTheWeek() {
   createDaysOfTheWeek();
   
   // Escreva seu código abaixo.
-
+  // Cria os dias do calendário e atribui as classes de sexta-feira e feriados;
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   const dezDaysFeriado = [24,25,31];
   const listaDia = document.getElementById("days");
@@ -44,4 +44,14 @@ function createDaysOfTheWeek() {
       }
     }
     feriado(dezDaysList);
+
+// Cria botão Feriados
+function btFeriado (Feriados){
+    const divBotao = document.getElementsByClassName("buttons-container");
+    const botao = document.createElement("input");
+    botao.type("button");
+    botao.value("Feriados");
+    botao.id="btn-holiday";
+    divBotao.appendChild(botao);
+}
 
