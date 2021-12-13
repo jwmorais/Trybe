@@ -47,11 +47,28 @@ function createDaysOfTheWeek() {
 
 // Cria botão Feriados
 function btFeriado (Feriados){
-    const divBotao = document.getElementsByClassName("buttons-container");
-    const botao = document.createElement("input");
-    botao.type("button");
-    botao.value("Feriados");
+    const divBotao = document.querySelector(".buttons-container")
+    const botao = document.createElement("button");
+    //botao.type("button");
+    botao.innerText="Feriados";
     botao.id="btn-holiday";
     divBotao.appendChild(botao);
 }
+btFeriado();
+
+// Destacar Feriados
+function destacarFeriados (){
+  let corFeriado = 0
+  const dFeriados = document.getElementsByClassName("holiday");
+  for(let i of dFeriados){
+    if (window.getComputedStyle(i).backgroundColor!=="rgb(238,238,238)" || i.style.backgroundColor=="rgba(0, 0, 0, 0)"){
+      i.style.backgroundColor="rgb(238,238,238)";
+    }else{
+      window.getComputedStyle(i).backgroundColor="red"
+     // i.style.backgroundColor="red";
+    }
+  }
+}
+document.getElementById("btn-holiday").addEventListener("click",destacarFeriados);
+
 
