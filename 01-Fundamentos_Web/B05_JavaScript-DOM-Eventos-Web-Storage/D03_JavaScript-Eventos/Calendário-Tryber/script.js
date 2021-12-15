@@ -19,6 +19,7 @@ function createDaysOfTheWeek() {
   const dezDaysFeriado = [24,25,31];
   const listaDia = document.getElementById("days");
   let contDay = 2
+  let corFeriado = 0
   
   for (let index=0; index<dezDaysList.length; index+=1){
       const dia = dezDaysList[index];
@@ -58,17 +59,28 @@ btFeriado();
 
 // Destacar Feriados
 function destacarFeriados (){
-  let corFeriado = 0
   const dFeriados = document.getElementsByClassName("holiday");
-  for(let i of dFeriados){
-    if (window.getComputedStyle(i).backgroundColor!=="rgb(238,238,238)" || i.style.backgroundColor=="rgba(0, 0, 0, 0)"){
-      i.style.backgroundColor="rgb(238,238,238)";
-    }else{
-      window.getComputedStyle(i).backgroundColor="red"
-     // i.style.backgroundColor="red";
-    }
+  if (corFeriado == 0){
+      for (let i in dFeriados){
+          dFeriados[i].style.backgroundColor="rgb(152,251,152)";
+          corFeriado = 1
+      }
+  }else{
+      for (let i in dFeriados){
+          dFeriados[i].style.backgroundColor="rgb(238,238,238)";
+          corFeriado = 0
+      }
   }
 }
 document.getElementById("btn-holiday").addEventListener("click",destacarFeriados);
 
-
+/*
+// Cria botão Sexta-Feira
+function btSexta ("Sexta-feira"){
+  const divBotao = document.querySelector(".buttons-container");
+  const botao = document.createElement("button");
+  botao.innerText="Sexta-feira";
+  botao.id="btn-friday";
+  divBotao.appendChild(botao);
+}
+btSexta();
