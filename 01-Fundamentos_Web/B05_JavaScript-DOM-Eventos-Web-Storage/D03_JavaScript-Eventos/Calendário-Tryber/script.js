@@ -22,6 +22,7 @@ function createDaysOfTheWeek() {
   let corFeriado = 0;
   let sextou = 0;
   let sextas =[];
+  let taskSelected = 0
   
   for (let index=0; index<dezDaysList.length; index+=1){
       const dia = dezDaysList[index];
@@ -127,3 +128,48 @@ function retiraZoom (event){
 }
 listaDia.addEventListener("mouseover",aplicaZoom);
 listaDia.addEventListener("mouseout",retiraZoom);
+
+//Função que cria tarefa personalizada
+function tarefa (tarefa){
+  const divTarefa = document.querySelector(".my-tasks");
+  const spTarefa = document.createElement("span");
+  spTarefa.innerText=tarefa;
+  divTarefa.appendChild(spTarefa);
+}
+tarefa("Estudar")
+
+//Função que cria uma cor para a tarefa criada.
+function corTarefa (cor){
+  const divTarefa = document.querySelector(".my-tasks");
+  const divCor = document.createElement("div");
+  divCor.style.backgroundColor=cor;
+  divCor.className="task"
+  divTarefa.appendChild(divCor);
+}
+corTarefa("red");
+
+//Adiciona a classe selected a div com a cor da tarefa
+function corSelected (event){
+  if (taskSelected==0){
+      event.target.classList.add("selected");
+      taskSelected = 1
+    }else{
+      event.target.classList.remove("selected");
+      taskSelected = 0
+  }  
+}
+document.querySelector(".task").addEventListener("click",corSelected);
+
+//altera a cor dos dias clicados conforme a cor da tarefa selecionada
+function addCorDia (event){
+  const queryCor = document.querySelector(".selected").style.backgroundColor
+  const queryCorDia = event.target.style.color;
+  if (taskSelected == 1){
+    if (queryCor == queryCorDia){
+      event.target.style.color="";
+    }else{
+      event.target.style.color=queryCor 
+    }
+  }
+}
+document.querySelector("#days").addEventListener("click", addCorDia);
