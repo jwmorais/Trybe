@@ -18,8 +18,10 @@ function createDaysOfTheWeek() {
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   const dezDaysFeriado = [24,25,31];
   const listaDia = document.getElementById("days");
-  let contDay = 2
-  let corFeriado = 0
+  let contDay = 2;
+  let corFeriado = 0;
+  let sextou = 0;
+  let sextas =[];
   
   for (let index=0; index<dezDaysList.length; index+=1){
       const dia = dezDaysList[index];
@@ -74,13 +76,54 @@ function destacarFeriados (){
 }
 document.getElementById("btn-holiday").addEventListener("click",destacarFeriados);
 
-/*
+
 // Cria botão Sexta-Feira
-function btSexta ("Sexta-feira"){
-  const divBotao = document.querySelector(".buttons-container");
-  const botao = document.createElement("button");
-  botao.innerText="Sexta-feira";
-  botao.id="btn-friday";
-  divBotao.appendChild(botao);
+function btSextaFeira (sextaFeira){
+  const divBt = document.querySelector(".buttons-container");
+  const btsexta = document.createElement("button");
+  btsexta.innerText="Sexta-feira";
+  btsexta.id="btn-friday";
+  divBt.appendChild(btsexta);
 }
-btSexta();
+btSextaFeira();
+
+//Alterna sexta-feira com emoji
+function emojiSextou (){
+  const listFriday = document.getElementsByClassName("friday");
+  if (sextou==0){
+      for (let i in listFriday){
+          listFriday[i].innerHTML="&#128526";
+          sextou = 1;
+      }
+  }else{
+      for (let i in listFriday){
+          sextasArray();
+          for (let i in listFriday){
+            listFriday[i].innerHTML=sextas[i];
+          sextou = 0;
+          }
+          sextas = [];
+      }
+  }
+
+}
+document.getElementById("btn-friday").addEventListener("click",emojiSextou);
+
+//Cria um array com os dias de Sexta-Feira
+function sextasArray (){
+    for (let index=5;index<dezDaysList.length;index+=7){
+        sextas.push(dezDaysList[index]);
+    }
+}
+
+//Função que dá um efeito zoom quando o mause passa por cima dos dias.
+function aplicaZoom (event){
+    event.target.style.fontSize="35px"
+}
+
+//Função que retira o efeito zomm quando o mouse sai de cima dos dias
+function retiraZoom (event){
+    event.target.style.fontSize=""
+}
+listaDia.addEventListener("mouseover",aplicaZoom);
+listaDia.addEventListener("mouseout",retiraZoom);
