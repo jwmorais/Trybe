@@ -173,3 +173,19 @@ function addCorDia (event){
   }
 }
 document.querySelector("#days").addEventListener("click", addCorDia);
+
+//Função que adiciona compromissos
+function addCompromissos (event){
+  const vlInput = document.getElementById("task-input").value
+  const listaTarefas = document.querySelector(".task-list");
+  const addLista = document.createElement("li");
+  //let tecla = event.key
+    if (vlInput.length == 0){
+      alert("Campo vazio")
+    }else{
+      addLista.innerHTML=vlInput
+      listaTarefas.appendChild(addLista);
+      document.getElementById("task-input").value=""
+  }
+}
+document.querySelector("#btn-add").addEventListener("click", addCompromissos);
