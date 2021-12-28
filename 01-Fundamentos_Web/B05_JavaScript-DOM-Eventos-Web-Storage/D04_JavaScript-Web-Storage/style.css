@@ -3,6 +3,68 @@
     margin: 2%;
 }
 
+h1{
+    font-size: 2.3em;
+}
+
+h2{
+    font-size: 1.5em;
+}
+
+p{
+    font-size: 1em;
+}
+
 h1, h2, h3{
     margin: 2%;
+}
+
+body{
+    font-size: 15px;
+    color:rgb(29, 49, 49);
+    line-height: 1
+}
+
+.cor-backgraund, .cor-texto, .tm-texto{
+    border: solid 1px;
+    border-color: rgb(161, 161, 161);
+    border-radius: 25px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.tm-texto{
+    border: solid 1px;
+    border-color: rgb(161, 161, 161);
+    border-radius: 25px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(176, 206, 155);
+    vertical-align: middle;
+    text-align: center;
+    font-size: 26px;
+}
+
+.btFonte{
+    border: solid 1px;
+    border-color: black;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(176, 206, 155);
+    vertical-align:middle;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 18px;
+}
+
+.texto-crt{
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px;
+    padding-left: 25px;
 }
